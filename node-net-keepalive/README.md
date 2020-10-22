@@ -49,10 +49,10 @@ Documentation gets generated from JSDoc comments, feel free to improve them by s
 
 ```javascript
 const Net = require('net'),
-  NetKeepAlive = require('custom-net-keepalive')
+  NetKeepAlive = require('net-keepalive')
 // or
 import * as Net from 'net'
-import * as NetKeepAlive from 'custom-net-keepalive'
+import * as NetKeepAlive from 'net-keepalive'
 
 // Create a TCP Server
 const srv = Net.createServer((s) => {
@@ -84,12 +84,6 @@ const s = Net.createConnection({ port: 1337 }, () => {
 
   // Get TCP_KEEPCNT for this specific socket
   NetKeepAlive.getKeepAliveProbes(s) // 1
-
-  // Set TCP_KEEPIDLE for this specific socket
-  NetKeepAlive.setKeepAliveIdle(s)
-
-  // Get TCP_KEEPIDLE for this specific socket
-  NetKeepAlive.getKeepAliveIdle(s) // 1000
 })
 ```
 
@@ -115,9 +109,9 @@ More info about `SO_KEEPALIVE` here: [TCP Keepalive HOWTO](http://tldp.org/HOWTO
     TCP_KEEPIDLE (since Linux 2.4) The time (in seconds) the connection needs to remain idle before TCP starts sending keepalive probes, if the socket option SO_KEEPALIVE has been set on this socket. This option should not be used in code intended to be portable.
 
 ```JavaScript
-const NetKeepAlive = require('custom-net-keepalive')
+const NetKeepAlive = require('net-keepalive')
 // or
-import * as NetKeepAlive from 'custom-net-keepalive'
+import * as NetKeepAlive from 'net-keepalive'
 
 // .....
 
